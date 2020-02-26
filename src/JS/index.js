@@ -22,7 +22,7 @@ import Modal from "./plugins/Modal/modalV2";
 */
 
 document.querySelector('#modal1').addEventListener('click', () => {
-    const Modal = new Modal(
+    const myModal = new Modal(
         {
             title:'class modal',
             animType:1,
@@ -33,17 +33,17 @@ document.querySelector('#modal1').addEventListener('click', () => {
     );
 
     document.querySelector('#allowClose').addEventListener('click',()=>{
-        Modal.allowDeniClose()
+        myModal.allowDeniClose()
     });
     document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
-        Modal.close()
+        myModal.close()
     });
-    Modal.open();
+    myModal.open();
 
 
 });
 document.querySelector('#modal2').addEventListener('click', () => {
-    const Modal = new Modal(
+    const myModal = new Modal(
         {
             type:'success',
             title: 'class modal#2',
@@ -53,15 +53,15 @@ document.querySelector('#modal2').addEventListener('click', () => {
         }
     );
     document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
-        Modal.close()
+        myModal.close()
     });
 
-    Modal.open();
+    myModal.open();
     setTimeout(()=>{
-        Modal.setContent(
+        myModal.setContent(
             `<div>New content</div>`
         );
-        Modal.allowDeniClose();
+        myModal.allowDeniClose();
     },2000)
 
 });

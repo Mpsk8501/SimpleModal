@@ -37,7 +37,7 @@ const ANIM_SPEED = {
     faster: 500,
 };
 
-export default class myModal {
+export default class Modal {
     constructor(options) {
         this.defolt = {
             type: 'normal',
