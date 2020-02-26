@@ -1,0 +1,35 @@
+.container{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1100px;
+}
+.example{
+  margin-top: 50px;
+  .btn{
+
+
+    margin-top: 20px;
+  }
+}
+
+.btn{
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 3px;
+  margin-right: 5px;
+  transition: border,background-color .3s;
+  &:hover{
+    border: 1px solid navy;
+    background-color: #ffffff;
+  }
+  &:active{
+    background-color: #ff91a9;
+    border: 1px solid crimson;
+  }
+}
+
+
+
+@import "modal/modal";
+

@@ -1,0 +1,73 @@
+@import "~animate.css";
+
+
+.modal {
+  --var-animSpeed: 0.4s;
+  --var-width: 600px;
+  --var-overlayColor: rgba(235,42,35,0.51);
+  --var-borderColor: rgb(199,0,0);
+  z-index: -1;
+  .modal-overlay {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: opacity var(--var-animSpeed) linear;
+
+    .modal-window {
+      width: var(--var-width);
+      border-radius: 5px;
+      background: #ffffff;
+      border: 1px solid var(--var-borderColor);
+      margin: 30% auto;
+      box-shadow: 0 2rem 2rem rgba(black, 0.2);
+      .modal-header {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        .modal-title {
+          font-size: 1.5rem;
+        }
+        .modal-close {
+          font-size: 2rem;
+          cursor: pointer;
+        }
+      }
+
+      .modal-body {
+        padding: 1rem;
+      }
+
+      .modal-footer {
+        background: #eee;
+        text-align: right;
+        padding: 5px 10px;
+        border-top: 1px solid #ccc;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+    }
+  }
+
+}
+
+.modal.open {
+  .modal-overlay {
+    opacity: 1;
+    z-index: 1000;
+    background: var(--var-overlayColor);
+  }
+}
+.modal.close {
+  .modal-overlay {
+    opacity: 0;
+  }
+}
+
+

@@ -1,0 +1,10 @@
+// Fonts here
+// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+//@include font-face(Raleway, /assets/fonts/RalewayBold/RalewayBold, bold, normal, eot ttf woff);
+//@include font-face(Raleway, /assets/fonts/RalewayRegular/RalewayRegular, 400, normal, eot ttf woff);
+@include font-face(Montserrat, /dist/fonts/montserrat/montserrat, 400, normal, ttf woff woff2);
+@include font-face(Montserrat, /dist/fonts/montserrat/montserrathairline, 100, normal, ttf woff woff2);
+@include font-face(Montserrat, /dist/fonts/montserrat/montserratlight, 300, normal, ttf woff woff2);
+@include font-face(Montserrat, /dist/fonts/montserrat/montserratbold, 700, normal, ttf woff woff2);
+@include font-face(Montserrat, /dist/fonts/montserrat/montserratblack, 900, normal, ttf woff woff2);
+@include font-face(Montserrat, /dist/fonts/montserrat/Montserrat-LightItalic, 300, italic,ttf otf);
