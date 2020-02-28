@@ -40,7 +40,7 @@ const __create = (options) => {
                 </div>
             </div>
         `);
-
+    figure.style.setProperty('--var-animationSpeed', `${options.animationSpeed}s`);
     figure.style.setProperty('--var-size', `${options.size}px`);
     figure.style.setProperty('--var-colorOne', `${options.colorOne}`);
     figure.style.setProperty('--var-colorTwo', `${options.colorTwo}`);
@@ -54,12 +54,11 @@ const __create = (options) => {
 export default class Figure {
     constructor(options) {
         this.defolt = {
-
-            animationSpeed: 5,
+            animationSpeed: 3,
             size: 10,
             colorOne: 'red',
             colorTwo: 'blue',
-            cooef: 32,
+            cooef: 16,
         };
         this.options = {...this.defolt, ...options};
         this.figure = __create(this.options);
@@ -67,12 +66,12 @@ export default class Figure {
 
         this.figure.addEventListener('dblclick',()=>{
             document.body.removeChild(this.figure);
-        })
+        });
+        this.figure.addEventListener('click',()=>{
+            this.playPause();
+        });
     }
 
-    startAnimate =()=> {
-        this.figure.style.setProperty('--var-animationSpeed', `${this.options.animationSpeed}s`);
-    };
     playPause=()=>{
         if(this.isPlayed){
             this.figure.style.setProperty('--var-playState', `paused`);

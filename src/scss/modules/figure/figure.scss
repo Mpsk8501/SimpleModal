@@ -1,4 +1,5 @@
 .figure{
+  overflow: hidden;
   --var-animationSpeed: 0s;
   --var-size: 10px;
   --var-colorOne: blue;
@@ -15,7 +16,6 @@
   .radius{
     position: absolute;
     border-radius: 50%;
-    animation-play-state:var(--var-playState)
   }
   .radius1{
     border: var(--var-size) solid var(--var-colorOne);

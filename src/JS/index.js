@@ -71,25 +71,55 @@ document.querySelector('#modal2').addEventListener('click', () => {
 });
 
 document.querySelector('#figure1').addEventListener('click', () => {
-    const myFigure = new Figure();
-    myFigure.startAnimate();
+    const myFigure = new Figure(
+        {
+            animationSpeed: 0.5,
+            cooef:64,
+            size:15
+        }
+    );
 });
 
 document.querySelector('#figure2').addEventListener('click',()=> {
     const myFigure = new Figure(
         {
-            size: 8,
             colorOne: 'green',
-            colorTwo: 'blue',
+            colorTwo: 'red',
             animationSpeed: 2
         }
     );
-    myFigure.startAnimate();
-
-    document.querySelector('.figure').addEventListener('click', () => {
-        myFigure.playPause()
-    })
 });
+document.querySelector('#figure3').addEventListener('click',()=> {
+    const myFigure = new Figure(
+        {
+            colorOne: 'blue',
+            colorTwo: 'blue',
+            animationSpeed: 1,
+            cooef:32
+        }
+    );
+});
+document.querySelector('#figure4').addEventListener('click',()=> {
+    const myFigure = new Figure(
+        {
+            colorOne: 'blue',
+            colorTwo: 'orange',
+            animationSpeed: 1,
+            cooef:256
+        }
+    );
+});
+document.querySelector('#figure5').addEventListener('click',()=> {
+    const myFigure = new Figure(
+        {
+            colorOne: 'crimson',
+            colorTwo: 'orange',
+            animationSpeed: 1,
+        }
+    );
+});
+
+
 
 
 
