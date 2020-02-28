@@ -1,4 +1,5 @@
 import Modal from "./plugins/Modal/modalV2";
+import Figure from "./plugins/Figure/Figure";
 
 /*
 * options:
@@ -31,6 +32,7 @@ document.querySelector('#modal1').addEventListener('click', () => {
                      <button id="allowClose" class="btn">Allow/deni</button>`
         }
     );
+    myModal.open();
 
     document.querySelector('#allowClose').addEventListener('click',()=>{
         myModal.allowDeniClose()
@@ -38,7 +40,7 @@ document.querySelector('#modal1').addEventListener('click', () => {
     document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
         myModal.close()
     });
-    myModal.open();
+
 
 
 });
@@ -48,15 +50,17 @@ document.querySelector('#modal2').addEventListener('click', () => {
             type:'success',
             title: 'class modal#2',
             animType: 2,
+            animSpeed:'slow',
             preventClose:true,
             crossClose:true
         }
     );
+    myModal.open();
+
     document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
         myModal.close()
     });
 
-    myModal.open();
     setTimeout(()=>{
         myModal.setContent(
             `<div>New content</div>`
@@ -65,6 +69,28 @@ document.querySelector('#modal2').addEventListener('click', () => {
     },2000)
 
 });
+
+document.querySelector('#figure1').addEventListener('click', () => {
+    const myFigure = new Figure();
+    myFigure.startAnimate();
+});
+
+document.querySelector('#figure2').addEventListener('click',()=> {
+    const myFigure = new Figure(
+        {
+            size: 8,
+            colorOne: 'green',
+            colorTwo: 'blue',
+            animationSpeed: 2
+        }
+    );
+    myFigure.startAnimate();
+
+    document.querySelector('.figure').addEventListener('click', () => {
+        myFigure.playPause()
+    })
+});
+
 
 
 

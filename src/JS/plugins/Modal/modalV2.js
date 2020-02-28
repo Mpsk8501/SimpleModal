@@ -37,6 +37,42 @@ const ANIM_SPEED = {
     faster: 500,
 };
 
+const __create = (options) => {
+    console.log('start');
+    const crossClose = `<span class="modal-close">
+                                    &times;
+                                 </span>`;
+
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.insertAdjacentHTML('afterbegin',
+        `<div class="modal-overlay">
+                <div id="modalWindow" class="modal-window">
+                    <div class="modal-header">
+                        <span class="modal-title">
+                            ${options.title}
+                        </span>
+                        ${options.crossClose ? crossClose : ''}
+                    </div>
+                    <div class="modal-body">
+                         ${options.body}
+                     </div>
+                    <div class="modal-footer">
+                        ${options.footer}
+                    </div>
+                </div>
+            </div>
+        `);
+    modal.style.setProperty('--var-width', `${options.width}px`);
+    modal.style.setProperty('--var-animSpeed', `${ANIM_SPEED[options.animSpeed] / 1000}s`);
+    modal.style.setProperty('--var-overlayColor', `${TYPE[options.type][0]}`);
+    modal.style.setProperty('--var-borderColor', `${TYPE[options.type][1]}`);
+    document.body.appendChild(modal);
+    return modal
+
+};
+
+
 export default class Modal {
     constructor(options) {
         this.defolt = {
@@ -50,50 +86,17 @@ export default class Modal {
             animType: 4,
             crossClose: true,
             preventClose: false,
-            onOpen:()=>{
+            onOpen: () => {
                 console.log('Before_open')
             },
-            onClose:()=>{
+            onClose: () => {
                 console.log('Before_close')
             }
         };
-        this.crossClose = `<span class="modal-close">
-                                    &times;
-                                 </span>`;
+
         this.options = {...this.defolt, ...options};
-
-        this.__create = () => {
-            console.log('start');
-            const modal = document.createElement('div');
-            modal.classList.add('modal');
-            modal.insertAdjacentHTML('afterbegin',
-                `<div class="modal-overlay">
-                <div id="modalWindow" class="modal-window">
-                    <div class="modal-header">
-                        <span class="modal-title">
-                            ${this.options.title}
-                        </span>
-                        ${this.options.crossClose ? this.crossClose : ''}
-                    </div>
-                    <div class="modal-body">
-                         ${this.options.body}
-                     </div>
-                    <div class="modal-footer">
-                        ${this.options.footer}
-                    </div>
-                </div>
-            </div>
-        `);
-            modal.style.setProperty('--var-width', `${this.options.width}px`);
-            modal.style.setProperty('--var-animSpeed', `${ANIM_SPEED[this.options.animSpeed] / 1000}s`);
-            modal.style.setProperty('--var-overlayColor', `${TYPE[this.options.type][0]}`);
-            modal.style.setProperty('--var-borderColor', `${TYPE[this.options.type][1]}`);
-            document.body.appendChild(modal);
-            return modal
-        };
-        this.newModal = this.__create();
+        this.newModal = __create(this.options);
         this.modalWindow = document.querySelector('#modalWindow');
-
         const modalCrossClose = document.querySelector('.modal-close');
         if (modalCrossClose) {
             modalCrossClose.addEventListener('click', () => {
@@ -107,12 +110,11 @@ export default class Modal {
             }
         });
 
-
     }
 
-    open = () => {
+    open() {
         this.options.onOpen();
-        setTimeout(() => {
+        setTimeout(()=>{
             this.newModal.classList.add('open');
             this.modalWindow.classList.add('animated', `${ANIMATION.in[this.options.animType]}`, `${this.options.animSpeed}`);
         },10)

@@ -1,6 +1,5 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 const conf ={
@@ -10,7 +9,6 @@ const conf ={
         filename: "main.js",
         publicPath: "/dist"
     },
-
     devServer: {
         hot:true,
         overlay:true,
@@ -30,7 +28,7 @@ const conf ={
             {
                 filename: "[name].css"
             }
-        ),
+        )
     ],
     module: {
         rules: [{

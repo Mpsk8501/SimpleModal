@@ -1,0 +1,182 @@
+.figure{
+  --var-animationSpeed: 0s;
+  --var-size: 10px;
+  --var-colorOne: blue;
+  --var-colorTwo: red;
+  --var-cooef:32;
+  --var-playState:'running';
+
+  height: calc(var(--var-size)*32);
+  margin-top: 30px;
+  position: relative;
+
+
+
+  .radius{
+    position: absolute;
+    border-radius: 50%;
+    animation-play-state:var(--var-playState)
+  }
+  .radius1{
+    border: var(--var-size) solid var(--var-colorOne);
+    border-right: var(--var-size) solid transparent;
+    border-bottom: var(--var-size) solid transparent;
+    width: calc(var(--var-size)*32);
+    height: calc(var(--var-size)*32);
+    transform: rotate(45deg);
+    animation: rotate var(--var-animationSpeed) linear infinite;
+    animation-play-state:var(--var-playState);
+    .radius2{
+      border: var(--var-size) solid var(--var-colorTwo);
+      border-right: var(--var-size) solid transparent;
+      border-bottom: var(--var-size)solid transparent;
+      width: calc(var(--var-size)*30);
+      height: calc(var(--var-size)*30);
+      animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+      animation-play-state:var(--var-playState);
+      .radius3{
+        border: var(--var-size) solid var(--var-colorOne);
+        border-right: var(--var-size) solid transparent;
+        border-bottom: var(--var-size) solid transparent;
+        width: calc(var(--var-size)*28);
+        height: calc(var(--var-size)*28);
+        animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef))linear infinite;
+        animation-play-state:var(--var-playState);
+        .radius4{
+          border:var(--var-size) solid var(--var-colorTwo);
+          border-right:var(--var-size) solid transparent;
+          border-bottom:var(--var-size) solid transparent;
+          width: calc(var(--var-size)*26);
+          height: calc(var(--var-size)*26);
+          animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+          animation-play-state:var(--var-playState);
+          .radius5{
+            border:var(--var-size) solid var(--var-colorOne);
+            border-right:var(--var-size) solid transparent;
+            border-bottom:var(--var-size) solid transparent;
+            width: calc(var(--var-size)*24);
+            height: calc(var(--var-size)*24);
+            animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+            animation-play-state:var(--var-playState);
+            .radius6{
+              border:var(--var-size) solid var(--var-colorTwo);
+              border-right:var(--var-size) solid transparent;
+              border-bottom:var(--var-size) solid transparent;
+              width: calc(var(--var-size)*22);
+              height: calc(var(--var-size)*22);
+              animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+              animation-play-state:var(--var-playState);
+              .radius7{
+                border:var(--var-size) solid var(--var-colorOne);
+                border-right:var(--var-size) solid transparent;
+                border-bottom:var(--var-size) solid transparent;
+                width: calc(var(--var-size)*20);
+                height: calc(var(--var-size)*20);
+                animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                animation-play-state:var(--var-playState);
+                .radius8{
+                  border:var(--var-size) solid var(--var-colorTwo);
+                  border-right:var(--var-size) solid transparent;
+                  border-bottom:var(--var-size) solid transparent;
+                  width: calc(var(--var-size)*18);
+                  height: calc(var(--var-size)*18);
+                  animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                  animation-play-state:var(--var-playState);
+                  .radius9{
+                    border:var(--var-size) solid var(--var-colorOne);
+                    border-right:var(--var-size) solid transparent;
+                    border-bottom:var(--var-size) solid transparent;
+                    width: calc(var(--var-size)*16);
+                    height: calc(var(--var-size)*16);
+                    animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                    animation-play-state:var(--var-playState);
+                    .radius10{
+                      border:var(--var-size) solid var(--var-colorTwo);
+                      border-right:var(--var-size) solid transparent;
+                      border-bottom:var(--var-size) solid transparent;
+                      width: calc(var(--var-size)*14);
+                      height: calc(var(--var-size)*14);
+                      animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                      animation-play-state:var(--var-playState);
+                      .radius11{
+                        border:var(--var-size) solid var(--var-colorOne);
+                        border-right:var(--var-size) solid transparent;
+                        border-bottom:var(--var-size) solid transparent;
+                        width: calc(var(--var-size)*12);
+                        height: calc(var(--var-size)*12);
+                        animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                        animation-play-state:var(--var-playState);
+                        .radius12{
+                          border:var(--var-size) solid var(--var-colorTwo);
+                          border-right:var(--var-size) solid transparent;
+                          border-bottom:var(--var-size) solid transparent;
+                          width: calc(var(--var-size)*10);
+                          height: calc(var(--var-size)*10);
+                          animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                          animation-play-state:var(--var-playState);
+                          .radius13{
+                            border:var(--var-size) solid var(--var-colorOne);
+                            border-right:var(--var-size) solid transparent;
+                            border-bottom:var(--var-size) solid transparent;
+                            width: calc(var(--var-size)*8);
+                            height: calc(var(--var-size)*8);
+                            animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                            animation-play-state:var(--var-playState);
+                            .radius14{
+                              border:var(--var-size) solid var(--var-colorTwo);
+                              border-right:var(--var-size) solid transparent;
+                              border-bottom: var(--var-size) solid transparent;
+                              width: calc(var(--var-size)*6);
+                              height: calc(var(--var-size)*6);
+                              animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                              animation-play-state:var(--var-playState);
+                              .radius15{
+                                border:var(--var-size) solid var(--var-colorOne);
+                                border-right:var(--var-size) solid transparent;
+                                border-bottom:var(--var-size) solid transparent;
+                                width: calc(var(--var-size)*4);
+                                height: calc(var(--var-size)*4);
+                                animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                                animation-play-state:var(--var-playState);
+                                .radius16{
+                                  border:var(--var-size) solid var(--var-colorTwo);
+                                  border-right:var(--var-size) solid transparent;
+                                  border-bottom:var(--var-size) solid transparent;
+                                  width: calc(var(--var-size)*2);
+                                  height: calc(var(--var-size)*2);
+                                  animation: rotate2 calc(var(--var-animationSpeed)*var(--var-cooef)) linear infinite;
+                                  animation-play-state:var(--var-playState);
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+   0%{transform:rotate(0)}
+   20%{transform:rotate(-72deg)}
+   40%{transform:rotate(-144deg)}
+   60%{transform:rotate(-216deg)}
+   80%{transform:rotate(-288deg)}
+   100%{transform:rotate(-360deg)}
+ }
+@keyframes rotate2 {
+  0%{transform:rotate(0)}
+  20%{transform:rotate(72deg)}
+  40%{transform:rotate(144deg)}
+  60%{transform:rotate(216deg)}
+  80%{transform:rotate(288deg)}
+  100%{transform:rotate(360deg)}
+}
