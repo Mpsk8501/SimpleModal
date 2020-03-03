@@ -1,5 +1,9 @@
 import Modal from "./plugins/Modal/modalV2";
 import Figure from "./plugins/Figure/Figure";
+import Cards from "./cards"
+
+
+
 
 /*
 * options:
@@ -22,27 +26,20 @@ import Figure from "./plugins/Figure/Figure";
 * allowDeniClose - разрешает/запрещяет закрытие
 */
 
+Cards();
+
+
+
+
 document.querySelector('#modal1').addEventListener('click', () => {
     const myModal = new Modal(
         {
             title:'class modal',
             animType:1,
-            preventClose:true,
-            footer: `<button id="modal_btn_ok" class="btn">OK</button>
-                     <button id="allowClose" class="btn">Allow/deni</button>`
+            btn:false
         }
     );
     myModal.open();
-
-    document.querySelector('#allowClose').addEventListener('click',()=>{
-        myModal.allowDeniClose()
-    });
-    document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
-        myModal.close()
-    });
-
-
-
 });
 document.querySelector('#modal2').addEventListener('click', () => {
     const myModal = new Modal(
@@ -57,10 +54,6 @@ document.querySelector('#modal2').addEventListener('click', () => {
     );
     myModal.open();
 
-    document.querySelector('#modal_btn_ok').addEventListener('click',()=>{
-        myModal.close()
-    });
-
     setTimeout(()=>{
         myModal.setContent(
             `<div>New content</div>`
@@ -70,18 +63,41 @@ document.querySelector('#modal2').addEventListener('click', () => {
 
 });
 
-document.querySelector('#figure1').addEventListener('click', () => {
-    const myFigure = new Figure(
+document.querySelector('#modal3').addEventListener('click', () => {
+    const myModal = new Modal(
         {
-            animationSpeed: 0.5,
-            cooef:64,
-            size:15
+            title:'class modal#3',
+            animType:1,
+            footerButtons: [
+                {
+                    type:'btn-danger',
+                    text:'Cancel',
+                    closable:true,
+                },
+                {
+                    handler:()=>{
+                        console.log('modal#3 btn clicked')
+                    }
+                }
+            ]
+        }
+    );
+    myModal.open();
+});
+
+
+document.querySelector('#figure1').addEventListener('click', () => {
+    new Figure(
+        {
+            animationSpeed: 1,
+            cooef:32,
+            size:8
         }
     );
 });
 
 document.querySelector('#figure2').addEventListener('click',()=> {
-    const myFigure = new Figure(
+    new Figure(
         {
             colorOne: 'green',
             colorTwo: 'red',
@@ -90,7 +106,7 @@ document.querySelector('#figure2').addEventListener('click',()=> {
     );
 });
 document.querySelector('#figure3').addEventListener('click',()=> {
-    const myFigure = new Figure(
+    new Figure(
         {
             colorOne: 'blue',
             colorTwo: 'blue',
@@ -100,7 +116,7 @@ document.querySelector('#figure3').addEventListener('click',()=> {
     );
 });
 document.querySelector('#figure4').addEventListener('click',()=> {
-    const myFigure = new Figure(
+    new Figure(
         {
             colorOne: 'blue',
             colorTwo: 'orange',
@@ -110,7 +126,7 @@ document.querySelector('#figure4').addEventListener('click',()=> {
     );
 });
 document.querySelector('#figure5').addEventListener('click',()=> {
-    const myFigure = new Figure(
+    new Figure(
         {
             colorOne: 'crimson',
             colorTwo: 'orange',

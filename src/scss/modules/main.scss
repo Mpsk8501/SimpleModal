@@ -5,14 +5,12 @@
 }
 .example{
   margin-top: 50px;
-  .btn{
-
-
+  button{
     margin-top: 20px;
   }
 }
 
-.btn{
+%btn-shared{
   cursor: pointer;
   border: 1px solid grey;
   border-radius: 3px;
@@ -29,8 +27,17 @@
   }
 }
 
+.btn{
+  @extend %btn-shared
+}
+.btn-danger{
+  @extend %btn-shared;
+  border-color: crimson;
+}
+
 
 
 @import "modal/modal";
 @import "figure/figure";
+@import "cards";
 
