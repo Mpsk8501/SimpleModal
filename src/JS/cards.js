@@ -1,4 +1,5 @@
 import Modal from "./plugins/Modal/modalV2";
+import ConfirmModal from "./plugins/ConfirmModal/ConfirmModal";
 const cards = [
     {
         title:'Cat',
@@ -52,7 +53,7 @@ const __addBtn=()=>{
         };
         const deleteBtn = document.querySelector(`#deleteBtn-${i}`);
         deleteBtn.onclick = ()=>{
-            const newModal = new Modal({
+            /*const newModal = new Modal({
                 title:'Delete',
                 body: '<p>Are you sure you want to delete the card?</p>',
                 footerButtons:[
@@ -72,7 +73,13 @@ const __addBtn=()=>{
 
                 ]
             });
-            newModal.open();
+            newModal.open();*/
+            ConfirmModal({
+                title: 'Delete',
+                body: '<p>Are you sure you want to delete the card?</p>',
+            }).then(()=>{
+                __deleteCard(i)
+            }).catch(()=>{})
         };
     }
 };
@@ -89,7 +96,7 @@ export default ()=>{
         domCard.id = `card_${index}`;
         domCard.insertAdjacentHTML('afterbegin',
             `
-                    <img src=${card.img} alt="Animal">
+                    <img src=${card.img} alt=${card.title}>
                     <div class="card__title">
                         ${card.title}
                     </div>

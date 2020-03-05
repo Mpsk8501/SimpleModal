@@ -132,7 +132,7 @@ export default class Modal {
                 console.log('Before_open')
             },
             onClose: () => {
-                console.log('Before_close')
+                console.log('After_close')
             }
         };
 
@@ -198,8 +198,8 @@ export default class Modal {
     };
 
     destroy = () => {
-        this.newModal.parentNode.removeChild(this.newModal);
         this.newModal.removeEventListener('click', this.listener);
+        this.newModal.parentNode.removeChild(this.newModal);
         this.destroyed = true
     }
 }
